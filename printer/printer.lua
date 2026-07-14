@@ -422,8 +422,8 @@ local function print_next(self)
 end
 
 
-local function appear_text(self)
-	self.current_index = 1
+local function appear_text(self, no_clear)
+	self.current_index = no_clear and self.current_index or 1
 	if #self.current_letters > 0 then
 		self.is_print = true
 		print_next(self)
@@ -471,7 +471,7 @@ function M.instant_appear(self)
 end
 
 
-function M.print(self, str, source)
+function M.print(self, str, source, no_clear)
 	-- Only update node_parent_pos if we're not currently shaking
     if self.shake_time <= 0 then
         self.node_parent_pos = gui.get_position(self.node_parent)
@@ -489,14 +489,16 @@ function M.print(self, str, source)
 		self.default_style = self.stylename
 		self.last_style = styles[self.default_style]
 		self.prev_node = false
-		clear_prev_text(self)
+		if not no_clear then
+			clear_prev_text(self)
+		end
 		self.string = str
 
 		-- precreate -> posing -> start showing
 		self.string = modify_text(self.string)
 		precreate_text(self)
 		update_text_pos(self)
-		appear_text(self)
+		appear_text(self, no_clear)
 		return true
 	end
 end

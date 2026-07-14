@@ -157,12 +157,13 @@ Create new printer instance to use it for print text
 - `self` gui self context
 - `prefab_name` printer template name of gui scene
 
-## printer.print(instance, text, [source]
+## printer.print(instance, text, [source], [no_clear])
 Start printing text on selected instance
 ### PARAMETERS
 - `instance` printer instance, created by *printer.new*
 - `text` string, text to start printing
 - `source` string, name of source to setup other default style for this text
+- `no_clear` boolean, print to the same instance without clearing currently displayed text if true
 
 ## printer.is_print
 Boolean value to check, if printer now printing text or not
