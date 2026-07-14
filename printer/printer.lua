@@ -466,6 +466,7 @@ function M.instant_appear(self)
 		self.is_print = false
 		for i in pairs(self.current_letters) do
 			appear_node(self, self.current_letters[i], true)
+			self.current_index = i
 		end
 	end
 end

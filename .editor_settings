@@ -1,0 +1,29 @@
+{
+  :code {
+    :breakpoints [
+    ]
+    :find {
+      :term "bool"
+    }
+  }
+  :workflow {
+    :open-tabs [
+      [
+      ]
+    ]
+    :recent-files [
+      [
+        "/README.md"
+        :code
+      ]
+      [
+        "/README.md"
+        :html
+      ]
+      [
+        "/printer/printer.lua"
+        :code
+      ]
+    ]
+  }
+}
